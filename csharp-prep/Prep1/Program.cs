@@ -7,7 +7,7 @@ class Program
         Console.Write("What is your first name? ");
         string firstName = Console.ReadLine();
 
-        // Solicitar el apellido
+
         Console.Write("What is your last name? ");
         string lastName = Console.ReadLine();
 
