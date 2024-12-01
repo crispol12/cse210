@@ -45,7 +45,7 @@ class Program
             sign = "-";
         }
 
-        // Handle exceptions for A+ and F grades
+
         if (letter == "A" && sign == "+")
         {
             sign = "";
