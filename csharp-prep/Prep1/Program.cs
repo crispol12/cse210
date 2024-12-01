@@ -11,7 +11,7 @@ class Program
         Console.Write("What is your last name? ");
         string lastName = Console.ReadLine();
 
-        // Mostrar el resultado en el formato deseado
+     
         Console.WriteLine($"Your name is {lastName}, {firstName} {lastName}.");
     }
 }
