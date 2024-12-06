@@ -4,18 +4,15 @@ using System.IO;
 
 public class Journal
 {
-    // List of entries
     private List<Entry> _entries;
     private PromptGenerator _promptGenerator;
 
-    // Constructor
     public Journal()
     {
         _entries = new List<Entry>();
         _promptGenerator = new PromptGenerator();
     }
 
-    // Add a new entry
     public void AddEntry()
     {
         string prompt = _promptGenerator.GetRandomPrompt();
@@ -27,46 +24,79 @@ public class Journal
         _entries.Add(newEntry);
     }
 
-    // Display all entries
     public void DisplayAll()
     {
+        if (_entries.Count == 0)
+        {
+            Console.WriteLine("No entries found.");
+            return;
+        }
+
         foreach (Entry entry in _entries)
         {
             entry.Display();
         }
     }
 
-    // Save to file
-    public void SaveToFile(string file)
+    public void SaveToFile()
     {
-        using (StreamWriter writer = new StreamWriter(file))
+        string filename = "journal.txt";
+        try
         {
-            foreach (Entry entry in _entries)
+            // Abrir el archivo y escribir los prompts, incluso si no hay entradas
+            using (StreamWriter writer = new StreamWriter(filename))
             {
-                writer.WriteLine(entry.ToCSV());
+                if (_entries.Count == 0)
+                {
+                    // Si no hay entradas, aún escribimos un mensaje inicial
+                    writer.WriteLine("No journal entries available yet.");
+                }
+                else
+                {
+                    foreach (Entry entry in _entries)
+                    {
+                        writer.WriteLine(entry.ToCSV());
+                    }
+                }
             }
+
+            Console.WriteLine($"Journal saved to {filename}.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error saving the journal: {ex.Message}");
         }
     }
 
-    // Load from file
-    public void LoadFromFile(string file)
+    public void LoadFromFile()
     {
-        if (File.Exists(file))
+        string filename = "journal.txt";
+        if (File.Exists(filename))
         {
-            _entries.Clear();
-            string[] lines = File.ReadAllLines(file);
-            foreach (string line in lines)
+            try
             {
-                Entry entry = Entry.FromCSV(line);
-                if (entry != null)
+                _entries.Clear();
+                string[] lines = File.ReadAllLines(filename);
+                foreach (string line in lines)
                 {
-                    _entries.Add(entry);
+                    Entry entry = Entry.FromCSV(line);
+                    if (entry != null)
+                    {
+                        _entries.Add(entry);
+                    }
                 }
+                Console.WriteLine($"Journal loaded from {filename}.\n");
+
+                DisplayAll();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error loading the journal: {ex.Message}");
             }
         }
         else
         {
-            Console.WriteLine("File not found.");
+            Console.WriteLine($"File {filename} not found.\n");
         }
     }
 }

@@ -2,12 +2,10 @@ using System;
 
 public class Entry
 {
-    // Attributes
     private string _date;
     private string _promptText;
     private string _entryText;
 
-    // Constructor
     public Entry(string promptText, string entryText)
     {
         _date = DateTime.Now.ToShortDateString();
@@ -15,7 +13,6 @@ public class Entry
         _entryText = entryText;
     }
 
-    // Display method
     public void Display()
     {
         Console.WriteLine($"Date: {_date}");
@@ -24,13 +21,11 @@ public class Entry
         Console.WriteLine();
     }
 
-    // CSV serialization for saving
     public string ToCSV()
     {
         return $"{_date}|{_promptText}|{_entryText}";
     }
 
-    // CSV deserialization for loading
     public static Entry FromCSV(string csv)
     {
         string[] parts = csv.Split('|');
