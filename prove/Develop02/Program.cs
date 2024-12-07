@@ -1,3 +1,4 @@
+//I add the saving and loading in JSON files. I think that I made a good code that This have creativity and exceed your
 using System;
 
 class Program
@@ -36,11 +37,11 @@ class Program
                     break;
                 case 3:
                     Console.WriteLine("\n-- Save the Journal --");
-                    journal.SaveToFile(); // Guardar en JSON
+                    journal.SaveToFile(); // Save to JSON
                     break;
                 case 4:
                     Console.WriteLine("\n-- Load the Journal --");
-                    journal.LoadFromFile(); // Cargar desde JSON
+                    journal.LoadFromFile(); // Load from JSON
                     break;
                 case 5:
                     Console.WriteLine("\nGoodbye!");
