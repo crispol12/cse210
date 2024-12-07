@@ -6,14 +6,15 @@ class Program
     {
         Journal journal = new Journal();
         int choice = 0;
-
+        Console.WriteLine("My Journal");
         while (choice != 5)
         {
-            Console.WriteLine("\nPlease select one of the following choices:");
+            Console.WriteLine("\nPlease select one of the following choices(Write only the number):");
+            Console.WriteLine();
             Console.WriteLine("1. Write a new entry");
             Console.WriteLine("2. Display the journal");
-            Console.WriteLine("3. Save the journal (to journal.txt)");
-            Console.WriteLine("4. Load the journal (from journal.txt)");
+            Console.WriteLine("3. Save the journal");
+            Console.WriteLine("4. Load the journal");
             Console.WriteLine("5. Quit");
             Console.Write("What would you like to do? ");
             string input = Console.ReadLine();
