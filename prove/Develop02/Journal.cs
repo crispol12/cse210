@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.Json;
 
 public class Journal
 {
@@ -38,28 +39,14 @@ public class Journal
         }
     }
 
+    // Guardar en formato JSON
     public void SaveToFile()
     {
-        string filename = "journal.txt";
+        string filename = "journal.json"; // Guardar en formato JSON
         try
         {
-            // Abrir el archivo y escribir los prompts, incluso si no hay entradas
-            using (StreamWriter writer = new StreamWriter(filename))
-            {
-                if (_entries.Count == 0)
-                {
-                    // Si no hay entradas, aún escribimos un mensaje inicial
-                    writer.WriteLine("No journal entries available yet.");
-                }
-                else
-                {
-                    foreach (Entry entry in _entries)
-                    {
-                        writer.WriteLine(entry.ToCSV());
-                    }
-                }
-            }
-
+            string json = JsonSerializer.Serialize(_entries, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(filename, json); // Guardar el JSON en el archivo
             Console.WriteLine($"Journal saved to {filename}.");
         }
         catch (Exception ex)
@@ -68,26 +55,19 @@ public class Journal
         }
     }
 
+    // Cargar desde formato JSON
     public void LoadFromFile()
     {
-        string filename = "journal.txt";
+        string filename = "journal.json"; // Cargar desde archivo JSON
         if (File.Exists(filename))
         {
             try
             {
-                _entries.Clear();
-                string[] lines = File.ReadAllLines(filename);
-                foreach (string line in lines)
-                {
-                    Entry entry = Entry.FromCSV(line);
-                    if (entry != null)
-                    {
-                        _entries.Add(entry);
-                    }
-                }
+                string json = File.ReadAllText(filename); // Leer el contenido del archivo
+                _entries = JsonSerializer.Deserialize<List<Entry>>(json) ?? new List<Entry>(); // Convertir de JSON a objetos
                 Console.WriteLine($"Journal loaded from {filename}.\n");
 
-                DisplayAll();
+                DisplayAll(); // Mostrar las entradas cargadas
             }
             catch (Exception ex)
             {

@@ -2,37 +2,22 @@ using System;
 
 public class Entry
 {
-    private string _date;
-    private string _promptText;
-    private string _entryText;
+    public string Date { get; set; }
+    public string PromptText { get; set; }
+    public string EntryText { get; set; }
 
     public Entry(string promptText, string entryText)
     {
-        _date = DateTime.Now.ToShortDateString();
-        _promptText = promptText;
-        _entryText = entryText;
+        Date = DateTime.Now.ToShortDateString();
+        PromptText = promptText;
+        EntryText = entryText;
     }
 
     public void Display()
     {
-        Console.WriteLine($"Date: {_date}");
-        Console.WriteLine($"Prompt: {_promptText}");
-        Console.WriteLine($"Response: {_entryText}");
+        Console.WriteLine($"Date: {Date}");
+        Console.WriteLine($"Prompt: {PromptText}");
+        Console.WriteLine($"Response: {EntryText}");
         Console.WriteLine();
-    }
-
-    public string ToCSV()
-    {
-        return $"{_date}|{_promptText}|{_entryText}";
-    }
-
-    public static Entry FromCSV(string csv)
-    {
-        string[] parts = csv.Split('|');
-        if (parts.Length == 3)
-        {
-            return new Entry(parts[1], parts[2]) { _date = parts[0] };
-        }
-        return null;
     }
 }
