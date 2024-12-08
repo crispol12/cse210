@@ -1,3 +1,4 @@
+//I add a new class ScriptureLibrary.cs with a program work with a library of scriptures rather than a single one. Choose scriptures at random to present to the user.
 using System;
 
 namespace ScriptureMemorizer
@@ -6,10 +7,10 @@ namespace ScriptureMemorizer
     {
         static void Main(string[] args)
         {
-            // Creamos una biblioteca de escrituras
+            // I Create a script library
             ScriptureLibrary library = new ScriptureLibrary();
 
-            // Agregamos algunas escrituras de ejemplo a la biblioteca
+            // I Add some example scripts to the library
             library.AddScripture(
                 new Scripture(
                     new Reference("Proverbs", 3, 5, 6),
@@ -34,7 +35,7 @@ namespace ScriptureMemorizer
                 )
             );
 
-            // Obtenemos una escritura al azar de la biblioteca
+            // I Get a random script from the library
             
             Scripture selectedScripture = library.GetRandomScripture();
 
@@ -45,7 +46,7 @@ namespace ScriptureMemorizer
             Console.WriteLine();
             Console.WriteLine("Press ENTER to hide a few words or type 'quit' to exit.");
 
-            // Bucle principal
+
             while (true)
             {
                 string userInput = Console.ReadLine().Trim().ToLower();
@@ -58,7 +59,7 @@ namespace ScriptureMemorizer
 
                 if (string.IsNullOrEmpty(userInput))
                 {
-                    // Ocultar algunas palabras
+                    
                     selectedScripture.HideRandomWords(3);
                     Console.Clear();
                     Console.WriteLine("Scripture Memorizer");

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace ScriptureMemorizer
 {
-    /// <summary>
-    /// Maneja una colección de objetos Scripture y provee métodos
-    /// para agregar y obtener una escritura al azar.
-    /// </summary>
+   /// <summary>
+/// Manages a collection of Scripture objects and provides methods
+/// for adding and getting a random scripture.
+/// </summary
     class ScriptureLibrary
     {
         private List<Scripture> _scriptures;
@@ -19,7 +19,7 @@ namespace ScriptureMemorizer
         }
 
         /// <summary>
-        /// Agrega una escritura a la biblioteca.
+        /// Adds a script to the library.
         /// </summary>
         public void AddScripture(Scripture scripture)
         {
@@ -27,8 +27,8 @@ namespace ScriptureMemorizer
         }
 
         /// <summary>
-        /// Retorna una escritura al azar de la biblioteca.
-        /// Asume que hay al menos una escritura en la lista.
+        /// Returns a random write from the library.
+        /// Assumes there is at least one write in the list.
         /// </summary>
         public Scripture GetRandomScripture()
         {
