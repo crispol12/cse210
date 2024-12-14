@@ -5,18 +5,18 @@ class Program
     static void Main(string[] args)
     {
         // Create Addresses
-        Address address1 = new Address("123 Main St", "Springfield", "IL", "USA");
-        Address address2 = new Address("45 Queen St", "Toronto", "ON", "Canada");
+        Address address1 = new Address("1504 North Main Street", "Meridian", "ID", "USA");
+        Address address2 = new Address("10459 Reynolds Street", "Bonita Springs", "Florida", "USA");
 
         // Create Customers
-        Customer customer1 = new Customer("John Smith", address1);
-        Customer customer2 = new Customer("Alice Johnson", address2);
+        Customer customer1 = new Customer("Ava Walcott", address1);
+        Customer customer2 = new Customer("Remor Pavel", address2);
 
         // Create Products
-        Product prodA = new Product("Book on C#", "B001", 15.99, 2);
-        Product prodB = new Product("USB Flash Drive", "U100", 9.99, 5);
-        Product prodC = new Product("Wireless Mouse", "M200", 19.99, 1);
-        Product prodD = new Product("Laptop Stand", "L300", 29.99, 2);
+        Product prodA = new Product("Book on Python and Relation with AI", "B001", 15.99, 2);
+        Product prodB = new Product("USB Flash Drive 100 GB", "U100", 9.99, 5);
+        Product prodC = new Product("Wireless Mouse Alien Ware", "M200", 80.99, 1);
+        Product prodD = new Product("Laptop Dell", "L300", 500.99, 2);
 
         // Create first order (Customer in USA)
         Order order1 = new Order(customer1);
