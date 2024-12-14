@@ -6,7 +6,7 @@ class Program
     {
         // Create Addresses
         Address address1 = new Address("1504 North Main Street", "Meridian", "ID", "USA");
-        Address address2 = new Address("10459 Reynolds Street", "Bonita Springs", "Florida", "USA");
+        Address address2 = new Address("Sarances 123 and Nina", "Otavalo", "IM", "Ecuador");
 
         // Create Customers
         Customer customer1 = new Customer("Ava Walcott", address1);
