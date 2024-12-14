@@ -13,7 +13,7 @@ class Program
         Customer customer2 = new Customer("Remor Pavel", address2);
 
         // Create Products
-        Product prodA = new Product("Book on Python and Relation with AI", "B001", 15.99, 2);
+        Product prodA = new Product("Book on Python and Relation with AI", "B001", 22.99, 2);
         Product prodB = new Product("USB Flash Drive 100 GB", "U100", 9.99, 5);
         Product prodC = new Product("Wireless Mouse Alien Ware", "M200", 80.99, 1);
         Product prodD = new Product("Laptop Dell", "L300", 500.99, 2);
