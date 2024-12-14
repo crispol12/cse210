@@ -6,10 +6,10 @@ class Program
     static void Main(string[] args)
     {
         // Create videos
-        Video video1 = new Video("Introduction to C#", "CodeTeacher", 600);
-        Video video2 = new Video("Building a Console App", "DevMaster", 900);
-        Video video3 = new Video("Advanced OOP Concepts", "TechGuru", 1200);
-        Video video4 = new Video("C# Best Practices", "ProCoder", 750);
+        Video video1 = new Video("Introduction to C#", "Archie Moore", 600);
+        Video video2 = new Video("Building a Console App", "Camille Osmon", 900);
+        Video video3 = new Video("Advanced OOP Concepts", "Indy Kumar", 1200);
+        Video video4 = new Video("C# Best Practices", "Peter Taylor", 750);
 
         // Add comments to video1
         video1.AddComment(new Comment("Alice", "Great introduction, very clear!"));
