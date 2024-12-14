@@ -6,24 +6,23 @@ class Program
     static void Main(string[] args)
     {
         // Create videos
-        Video video1 = new Video("Introduction to C#", "CodeTeacher", 600);
-        Video video2 = new Video("Building a Console App", "DevMaster", 900);
-        Video video3 = new Video("Advanced OOP Concepts", "TechGuru", 1200);
+        Video video1 = new Video("Introduction to C#", "Archie Moore", 800);
+        Video video2 = new Video("Building a Console App", "Taylor Fletcher", 1000);
+        Video video3 = new Video("Advanced OOP Concepts", "Ignacio Johns", 1500);
 
         // Add comments to video1
-        video1.AddComment(new Comment("Alice", "Great introduction, very clear!"));
-        video1.AddComment(new Comment("Bob", "This helped me understand the basics."));
-        video1.AddComment(new Comment("Charlie", "Loved the examples!"));
+        video1.AddComment(new Comment("Ferran", "Excellent class, Wonderful!"));
+        video1.AddComment(new Comment("Eva", "This helped me understand the basics of the program."));
+        video1.AddComment(new Comment("Titus", "I understand perflectly the concepts, Thank You!"));
 
-        // Add comments to video2
-        video2.AddComment(new Comment("Diana", "Excellent explanation."));
-        video2.AddComment(new Comment("Ethan", "Now I can build my own console app!"));
-        video2.AddComment(new Comment("Fiona", "Thanks for the detailed steps."));
+        video2.AddComment(new Comment("Sharon", "This was very informative, thank you!"));
+        video2.AddComment(new Comment("Michael", "I finally understand how to structure my console app!"));
+        video2.AddComment(new Comment("Laura", "Your step-by-step approach made it simple to follow along."));
 
         // Add comments to video3
-        video3.AddComment(new Comment("George", "Advanced topics, but well explained."));
-        video3.AddComment(new Comment("Hannah", "I appreciate the clear definitions."));
-        video3.AddComment(new Comment("Ian", "The examples helped a lot."));
+        video3.AddComment(new Comment("Oliver", "These concepts seemed complex, but you made them easy."));
+        video3.AddComment(new Comment("Nina", "Your examples cleared up a lot of confusion I had."));
+        video3.AddComment(new Comment("Victor", "I appreciate the deep dive into advanced OOP patterns."));
 
         // Store videos in a list
         List<Video> videos = new List<Video>() { video1, video2, video3 };
