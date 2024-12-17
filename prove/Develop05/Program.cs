@@ -3,22 +3,26 @@ using System;
 class Program
 {
     /*
-     NOTE ON MEETING AND EXCEEDING REQUIREMENTS:
-     - Abstraction: Each class has only relevant attributes and responsibilities.
-     - Encapsulation: All member variables are private/protected, public methods are used for interaction.
-     - Inheritance: Activity is the base class, and BreathingActivity, ReflectingActivity, ListingActivity, and VisualizationActivity inherit from it.
-     - Inheriting Attributes and Behaviors: Common attributes (_name, _description, _duration) and methods (DisplayStartingMessage, DisplayEndingMessage, ShowSpinner, ShowCountdown) are in the base class Activity and used by derived classes.
-     - Functionality:
-       * Breathing Activity: Works as specified, alternating inhale/exhale with countdown until time is up.
-       * Reflecting Activity: Shows a random prompt, then asks random reflection questions, pausing (spinner) between questions.
-       * Listing Activity: Shows a prompt, counts down, then collects user-listed items until time ends, then displays the count.
-       * Visualization Activity (extra): Added for creativity. Guides the user through a visualization exercise with a chosen duration and spinner animation.
-     - Pausing/Animation: Spinner and countdowns are implemented using backspaces and Thread.Sleep for timing.
-     - Style: Each class is in its own file, naming conventions and whitespace follow guidelines.
-     - Creativity: The VisualizationActivity goes beyond the required activities.
+    REQUIREMENTS AND EXTRA CREATIVITY:
 
-     By adding the VisualizationActivity, we exceed the core requirements and demonstrate additional creativity.
-     */
+    - Abstraction: Each class includes only the attributes and methods it needs.
+    - Encapsulation: All member variables are private or protected, and we use public methods to interact with them.
+    - Inheritance: "Activity" is the base class. "BreathingActivity", "ReflectingActivity", "ListingActivity", and "VisualizationActivity" all inherit from it.
+    - Inheriting Attributes and Behaviors: Common attributes (_name, _description, _duration) and methods (DisplayStartingMessage, DisplayEndingMessage, ShowSpinner, ShowCountdown) are defined in the "Activity" base class. The other classes use these shared attributes and methods.
+    
+    - Functionality:
+      * Breathing Activity: Asks the user to breathe in and out with a countdown until the time runs out.
+      * Reflecting Activity: Shows a random prompt, then asks random reflection questions. The user thinks about the questions while a spinner animation plays.
+      * Listing Activity: Shows a prompt and gives the user time to list as many items as possible before time runs out. Then it displays how many items the user listed.
+      * Visualization Activity (extra): This is an added activity to show creativity. It guides the user to imagine a peaceful scene for the chosen duration, showing a spinner during that time.
+    
+    - Pausing/Animation: We use a spinner animation and countdown timers. These use backspaces and Thread.Sleep to create the effect.
+    - Style: Each class is in its own file. We follow consistent naming conventions and proper whitespace.
+    - Creativity: By adding the VisualizationActivity, we go beyond the basic requirements.
+
+    With the VisualizationActivity, this program not only meets the basic requirements but also shows extra creativity.
+*/
+
 
     static void Main(string[] args)
     {
